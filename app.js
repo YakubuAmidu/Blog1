@@ -3,7 +3,13 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var homeStartingContent =
-  'uehfuehuwuhehfueufhuef iehrfeha u8eierhdef ihfeuf aeuuf hueuhea fuueua uebfuahfueheu uebreuiaheuueuha uereuaeaheuea aeuuhrehuuaheue euruehauehue euuhreuahreur eurhehauerhu ueuhrueuauehr';
+  'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, ';
+
+var aboutContent =
+  'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, ';
+
+var contactContent =
+  'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, ';
 
 var app = express();
 
@@ -16,11 +22,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-  res.render('about');
+  res.render('about', { aboutingContent: aboutContent });
 });
 
 app.get('/contact', function (req, res) {
-  res.render('contact');
+  res.render('contact', { contactingContent: contactContent });
 });
 
 app.listen(3000, function () {
