@@ -52,7 +52,10 @@ app.get('/posts/:postName', function (req, res) {
   posts.forEach(function (post) {
     var storeTitle = _.lowerCase(post.title);
     if (storeTitle === requestedTitle) {
-      console.log('Match found');
+      res.render('post', {
+        title: post.title,
+        content: post.content,
+      });
     }
   });
 });
